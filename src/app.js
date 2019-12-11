@@ -5,8 +5,9 @@ const bodyParser = require("body-parser"); //converte o body em json
 const app = express();
 
 //para chamar a conexao com o banco de dados
-mongoose.connect('mongodb://localhost:27017/reprograma', {useNewUrlParser: true, useUnifiedTopology:true});
+//mongoose.connect('mongodb://localhost:27017/reprograma', {useNewUrlParser: true, useUnifiedTopology:true});
 
+mongoose.connect('mongodb+srv://adimin:admin123@cluster0-qfwf2.mongodb.net/reprograma', { useNewUrlParser: true })
 // chamr o mongo
 let db = mongoose.connection;
 db.on('error', console.log.bind(console, 'connection error:'));
@@ -27,9 +28,7 @@ app.use(function (req, res, next) {
   })
 
 app.use(bodyParser.json());// indicar que vai ser utilizado para coverter o body no json
-
 app.use("/estados", estados)//áqui é definido o que sera chamado na rota do postman, todos comecaram com clientes/ alguma coisa
-
 app.get("/ping", (req,res) => {
   res.send("pong")
 })
