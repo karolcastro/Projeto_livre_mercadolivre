@@ -7,7 +7,7 @@ const app = express();
 //para chamar a conexao com o banco de dados
 //mongoose.connect('mongodb://localhost:27017/reprograma', {useNewUrlParser: true, useUnifiedTopology:true});
 
-mongoose.connect('mongodb+srv://adimin:admin123@cluster0-qfwf2.mongodb.net/reprograma', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://adimin:admin123@cluster0-qfwf2.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
 // chamr o mongo
 let db = mongoose.connection;
 db.on('error', console.log.bind(console, 'connection error:'));
