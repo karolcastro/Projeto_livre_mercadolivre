@@ -30,5 +30,8 @@ app.use(bodyParser.json());// indicar que vai ser utilizado para coverter o body
 
 app.use("/estados", estados)//áqui é definido o que sera chamado na rota do postman, todos comecaram com clientes/ alguma coisa
 
+app.get("/ping", (req,res) => {
+  res.send("pong")
+})
 
 module.exports = app
