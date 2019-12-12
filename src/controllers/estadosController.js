@@ -28,11 +28,11 @@ exports.getGenero = (req, res, next) =>{
     })
 }
 
-exports.getCartaoSus = (req, res,next) =>{
+/*exports.getCartaoSus = (req, res,next) =>{
     const dadosEstados = req.params.estados
     const dados = estados.filter(item => item.estado == dadosEstados)
     res.status(200).send(dados)
-}
+}*/
 
 exports.updateEstado = (req,res,next) =>{
     Estados.update(

@@ -1,4 +1,5 @@
 //dependencias do projeto
+const path = require("path")
 const express = require("express");// constroi o servidor
 const mongoose = require("mongoose");//faz a conxao para o mongo
 const bodyParser = require("body-parser"); //converte o body em json
@@ -31,6 +32,11 @@ app.use(bodyParser.json());// indicar que vai ser utilizado para coverter o body
 app.use("/estados", estados)//áqui é definido o que sera chamado na rota do postman, todos comecaram com clientes/ alguma coisa
 app.get("/ping", (req,res) => {
   res.send("pong")
+})
+
+app.use(express.static('doc'))
+app.get('/api-doc', (req,res)=>{
+  res.sendFile(path.join(__dirname + '/../doc/index.html'))
 })
 
 module.exports = app

@@ -13,7 +13,7 @@ router.get('/', controller.getEstados)
  * @apiName GetEstados
  * @apiGroup User
  *
- * @apiParam {Number} id Users unique ID.
+ * @apiParam {String} id Users unique ID.
  *
  * @apiSuccess {String} firstname Firstname of the User.
  * @apiSuccess {String} lastname  Lastname of the User.
@@ -39,6 +39,7 @@ router.get('/genero/:genero',controller.getGenero)
 //router.get('/estados/:estado', controller.getCartaoSus)
 router.put("/:cartaoSus", controller.updateEstado)
 router.delete("/:cartaoSus", controller.deleteEstado)
+
 
 
 module.exports = router
