@@ -5,7 +5,7 @@ const bodyParser = require("body-parser"); //converte o body em json
 const app = express();
 
 //para chamar a conexao com o banco de dados
-//mongoose.connect('mongodb://localhost:27017/reprograma', {useNewUrlParser: true, useUnifiedTopology:true});
+//mongoose.connect('mongodb://localhost:27017/Estados', {useNewUrlParser: true, useUnifiedTopology:true});
 
 mongoose.connect('mongodb+srv://adimin:admin123@cluster0-qfwf2.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
 // chamr o mongo
