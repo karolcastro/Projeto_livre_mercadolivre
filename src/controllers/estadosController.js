@@ -28,13 +28,17 @@ exports.getGenero = (req, res, next) =>{
     })
 }
 
-/*exports.getCartaoSus = (req, res,next) =>{
-    const dadosEstados = req.params.estados
-    const dados = estados.filter(item => item.estado == dadosEstados)
-    res.status(200).send(dados)
-}*/
+exports.getDadosEstado = (req, res, next) =>{
+    const dadosEstados = req.params.estado
+    console.log('dados estados',dadosEstados)
+    Estados.find({estado: dadosEstados}, function(err, estado){
+        if (err) return res.status(500).send(err)
+        res.status(200).send("Estado não localizado")
+    })
+    
+}
 
-exports.updateEstado = (req,res,next) =>{
+exports.updateCartaoSus = (req,res,next) =>{
     Estados.update(
         {cartaoSus: req.params.cartaoSus},
         {$set: req.body},
@@ -52,11 +56,11 @@ exports.deleteEstado = (req, res, next) =>{
         if (err) return res.status(500).send(err)
 
         if (!cartaoSus){
-            return res.status(404).send({message:` ${estados.cartaoSus} não localizado !` })
+            return res.status(404).send({message:`Cartao SUS de numero ${estados.cartaoSus} não localizado !` })
         }
         estados.remove(function (err){
             if (!err){
-                res.status(200).send({message: `${estados.cartaoSus} removido com sucesso !`})
+                res.status(200).send({message: ` Cartao SUS de numero ${estados.cartaoSus} removido com sucesso !`})
             }
         })
     })
