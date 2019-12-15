@@ -8,18 +8,21 @@ const controller = require('../controllers/estadosController')// esta importando
 
 router.get('/', controller.getEstados)
 /**
- * @api {get}  Retorna todos os estados
- * 
+ * @api {get}  /  Retorna todos os estados do banco de dados
+ * @apiName getEstados
  * @apiGroup GET
  *
- *
- *
- * 
- * @apiSuccess {String} HTTP/1.1 201 
+ * @apiSuccess {String} Lista
+ * {
+ * HTTP/1.1 201 
+ * Retorna a lista dos estados
+ * }
  *
  * @apiSuccessExample Success-Response:
  *     [
     {
+        HTTP/1.1 201 
+
         "_id": "5df1810c2c1cc93b0463d921",
         "estado": "Sao Paulo",
         "nome": "Elisa Maria",
@@ -82,7 +85,7 @@ router.get('/', controller.getEstados)
 ]
  *     
  *
- * @apiError HTTP/1.1 500
+ * @apiError 404  HTTP/1.1 404 Not Found
  *
  * @apiErrorExample Error-Response:
  *     HTTP/1.1 404 Not Found
@@ -92,39 +95,39 @@ router.post('/',controller.post)// criar a rota post para inserir um novo cadast
 //router.use(authMiddleware);// a partir do cadastro tera o token
 
 /**
- * @api {post} "/" Acrescenta as informacoes de um novo paciente
- * 
+ * @api {post} /  Acrescenta as informacoes de um novo paciente
+ * @apiName post
  * @apiGroup POST
  *
- * 
- *
- * @apiSuccess {String}   Cadastro incluido com sucesso.
- * 
- *
+ * @apiSuccess {String} mesagem
+ * Cadastro incluido com sucesso!
  * @apiSuccessExample  Success-Response: 
- *          HTTP/1.1 201 Cadastro incluido com sucesso
- *   
- *
- * @apiError HTTP/1.1 500 error
+ * {
+ * HTTP/1.1 201 
+ * Cadastro incluido com sucesso!
+ * }  
+ * @apiError 404  HTTP/1.1 500 Not Found
  *
  * @apiErrorExample Error-Response:
- *     HTTP/1.1 500 error
- *      
+ *     HTTP/1.1 404 Not Found
  */
 
 
 router.get('/genero/:genero',controller.getGenero)
 /**
- * @api {get}  GET - Busca os dados por genero 
+ * @api {get} /:genero  Busca as informações por gênero 
+ * @apiName getGenero
  * @apiGroup GET
- * @apiSuccess {String} retorno  Retorna todos os pacientes do genero solicitado
+ * @apiSuccess {String} mensagem
+ * Retorna todos os pacientes do genero solicitado
+ * @apiParam {String} genero  Retorna todos os pacientes do genero solicitado
  * @apiSuccessExample  Success-Response: 
- *          HTTP/1.1 200 
+ *         { HTTP/1.1 200 
  * {
         "_id": "5df180c12c1cc93b0463d91f",
         "estado": "Rio de Janeiro",
         "nome": "Camila Maria",
-        "cartaoSus": 333223223,
+        "cartaoSus": 33333333333,
         "genero": "feminino",
         "idade": 25,
         "raca": "branca",
@@ -139,7 +142,7 @@ router.get('/genero/:genero',controller.getGenero)
         "_id": "5df180e72c1cc93b0463d920",
         "estado": "Amapa",
         "nome": "Maria Penha",
-        "cartaoSus": 663223223,
+        "cartaoSus": 66666666666,
         "genero": "feminino",
         "idade": 38,
         "raca": "indigena",
@@ -150,27 +153,27 @@ router.get('/genero/:genero',controller.getGenero)
         "evolucao_obito": false,
         "hospitalizacao": true
     }
+}
  *   
- *
- * @apiError HTTP/1.1 500 error
+ * @apiError 404 error
  *@apiErrorExample Error-Response:
- * 500 error
- *     
- *      
+ * {
+ * HTTP/1.1 
+ * 404 Bad Request
+ * }
  */
 router.get('/:estado', controller.getDadosEstado)
 /**
- * @api {get}  GET - Retorna todos os pacientes do estado solicitado
- * 
+ * @api {get}  /:estado  Retorna todos os pacientes do estado solicitado
+ * @apiName getDadosEstado
  * @apiGroup GET
  *
+ * @apiSuccess {String} mensagem
+ * HTTP/1.1 200 - Lista todos os pacientes do estado solicitado
  * 
- *
- * @apiSuccess {String}  HTTP/1.1 200 - 
- * 
- *
- * @apiSuccessExample  Success-Response 
- *          HTTP/1.1 200, 
+ * @apiSuccessExample  Success-Response: 
+ *  {
+ * HTTP/1.1 200, 
  *  {
         "_id": "5df180832c1cc93b0463d91e",
         "estado": "Parana",
@@ -216,64 +219,60 @@ router.get('/:estado', controller.getDadosEstado)
         "evolucao_obito": false,
         "hospitalizacao": true
     }
- *   
+ *   }
  *
- * @apiError HTTP/1.1 500 error - Estado não localizado
- *
- * 
- *     
- *      
+ * @apiError message: HTTP/1.1 404 error - Estado não localizado!
+ * @apiErrorExample Error-Response:
+ * {
+ * HTTP/1.1 404 Not found
+ *     message:  Estado não localizado!
+ * }   
  */
 
 router.put("/:cartaoSus", controller.updateCartaoSus)
 /**
- * @api {put}  Atualiza os dados do paciente de acordo com o numero do cartao SUS
- * 
+ * @api {put}  /:cartaoSus  Atualiza os dados do paciente de acordo com o numero do cartao SUS
+ * @apiName updateCartaoSus
  * @apiGroup PUT
- *
- * 
- *
- * @apiSuccess {String} dados Dados atualizados com sucesso!.
- * 
- *
- * @apiSuccessExample  Success-Response 
- *          HTTP/1.1 201
+ * @apiSuccess {String} mensagem
+ * Dados atualizados com sucesso!
+ * @apiParam {Number} Numero  numero do cartao SUS
+ * @apiSuccessExample  Success-Response: 
+ * {         
+ * HTTP/1.1 201
  *          Dados atualizados com sucesso!
- *   
- *
- * @apiError error
+ *  }
+ * @apiError message: HTTP/1.1 404 error
  * 
  * @apiErrorExample Error-Response:
- * HTTP/1.1 500 error
- *
- * 
- *     
- *      
+ * {
+ * HTTP/1.1 404 Not found
+ *} 
  */
 
 router.delete("/:cartaoSus", controller.deleteEstado)
 /**
- * @api {delete} -  Deleta os dados do paciente de acordo com o numero do cartao SUS
- * 
- * @apiGroup DELETE
+ * @api {delete} /:cartaoSus  Deletar a informacao de um paciente de acordo com o numero do cartao SUS
+ * @apiName deleteEstado
+ * @apiGroup Delete
  *
- * 
+ * @apiSuccess {String} mensagem  
+ * Cartao SUS de numero ########### removido com sucesso !
+ * @apiParam {Number} numero  numero do cartao SUS
  *
- * @apiSuccess {String} message:  Cartao SUS de numero ########### removido com sucesso !
- * 
- *
- * @apiSuccessExample  Success-Response 
- *          HTTP/1.1 201
- * message:  Cartao SUS de numero ${estados.cartaoSus}  removido com sucesso !
+ * @apiSuccessExample  Success-Response: 
+ * { 
+ * HTTP/1.1 201
+ * message:  Cartao SUS de numero 22222222222 removido com sucesso !
+ * }
  *   
- *
- * @apiError 
- * message:  Cartao SUS de numero ${estados.cartaoSus} não localizado !
- *
+ * @apiError  message:  Cartao SUS de numero 22222222222 não localizado !
+ * 
  * @apiErrorExample Error-Response:
- * HTTP/1.1 404
- *     message:  Cartao SUS de numero ${estados.cartaoSus} não localizado !
- *      
+ * HTTP/1.1 404 Not found
+ * {
+ *     message:  Cartao SUS de numero 22222222222 não localizado !
+ * }
  */
 
 

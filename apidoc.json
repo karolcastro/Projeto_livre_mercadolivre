@@ -1,7 +1,19 @@
 {
     "name": "Projeto_livre_mercadolivre",
     "version": "0.1.0",
-    "description": "apiDoc",
-    "title": "Custom apiDoc browser title",
-    "url" : "https://github.com/karolcastro/Projeto_livre_mercadolivre"
+    "description": "API dos Estados",
+    "apidoc": {
+    "title": "API para auxiliar o SUS a incluir dados dos pacientes com Dengue",
+    "url" : "https://github.com/karolcastro/Projeto_livre_mercadolivre",
+
+  "header": {
+    "title": "Projeto Livre Mercadolivre"
+    
+  },
+  "footer": {
+    "title": "Projeto Livre Mercadolivre"
+    
   }
+}
+}
+    

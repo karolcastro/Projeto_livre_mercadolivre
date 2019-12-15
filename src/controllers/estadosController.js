@@ -6,7 +6,7 @@ const Estados = require('../model/estados')
 exports.getEstados = (req, res,next) => {
     //const nomeEstados = req.params.estados
    Estados.find(function(err, estados){
-       if(err) res.status(500).send(err)
+       if(err) res.status(404).send(err)
        console.log(estados)
        res.status(200).send(estados)
    })
@@ -23,7 +23,7 @@ exports.post = (req, res,next) =>{
 exports.getGenero = (req, res, next) =>{
     const dadosGenero = req.params.genero
     Estados.find({genero: dadosGenero}, function(err, genero){
-        if (err) return res.status(500).send(err)
+        if (err) return res.status(400).send(err)
         res.status(200).send(genero)
     })
 }
@@ -32,8 +32,8 @@ exports.getDadosEstado = (req, res, next) =>{
     const dadosEstados = req.params.estado
     console.log('dados estados',dadosEstados)
     Estados.find({estado: dadosEstados}, function(err, estado){
-        if (err) return res.status(500).send(err)
-        res.status(200).send("Estado não localizado")
+        if (err) return res.status(404).send(err)
+        res.status(200).send(Estados)
     })
     
 }
