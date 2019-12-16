@@ -35,5 +35,7 @@ Estudante de Engenharia de Produção, estusiasta em Python, machine learning, I
 
 Aspirante a Data science e amante de meetups com foco no crescimento pessoal e profissional.</br>
 
+*https://www.linkedin.com/in/karol-de-castro-a3176994/
+
 Desenvolvendo novas capacidades na Reprograma com Desenvolvimento Back-end.</br>
 
