@@ -26,3 +26,14 @@ PUT /:cartaoSus - Atualiza os dados do paciente de acordo com o numero do cartao
 *MongoDB - Atlas </br>
 *Heroku </br>
 *Apidoc </br>
+
+## Autora
+
+Karol de Castro
+
+Estudante de Engenharia de Produção, estusiasta em Python, machine learning, IA, R, SQL e educação 4.0 com novas tecnologias como o ensino maker. </br>
+
+Aspirante a Data science e amante de meetups com foco no crescimento pessoal e profissional.</br>
+
+Desenvolvendo novas capacidades na Reprograma com Desenvolvimento Back-end.</br>
+
