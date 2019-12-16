@@ -11,11 +11,11 @@ Consiste na contrução de uma API que auxilia o acesso as informações a saúd
  
 #### Rotas 
 
-GET /estados - Retorna todos os estados do banco de dados
-GET /:genero - Busca as informações por gênero
-GET /:estado - Retorna todos os pacientes do estado solicitado
-DELETE /:cartaoSus - Deletar a informacao de um paciente de acordo com o numero do cartao SUS
-POST /  - Acrescenta as informacoes de um novo paciente
-PUT /:cartaoSus - Atualiza os dados do paciente de acordo com o numero do cartao SUS 
+GET /estados - Retorna todos os estados do banco de dados </br>
+GET /:genero - Busca as informações por gênero </br>
+GET /:estado - Retorna todos os pacientes do estado solicitado </br>
+DELETE /:cartaoSus - Deletar a informacao de um paciente de acordo com o numero do cartao SUS </br>
+POST /  - Acrescenta as informacoes de um novo paciente </br>
+PUT /:cartaoSus - Atualiza os dados do paciente de acordo com o numero do cartao SUS </br>
 
 
