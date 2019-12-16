@@ -20,9 +20,9 @@ PUT /:cartaoSus - Atualiza os dados do paciente de acordo com o numero do cartao
 
 
 ### Conceitos Aplicados
-*JavaScript
-*NodeJS
-*API REST
-*MongoDB - Atlas
-*Heroku
-*Apidoc
+*JavaScript </br>
+*NodeJS </br>
+*API REST </br>
+*MongoDB - Atlas </br>
+*Heroku </br>
+*Apidoc </br>
