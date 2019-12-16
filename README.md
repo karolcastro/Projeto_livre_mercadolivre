@@ -2,11 +2,11 @@
 
 ### Introdução
 
-O Brasil está a frente de 30 países com mais casos de dengue reportados 1,5 milhão de casos. Globalmente é estimado que o custo com a Dengue é de US$ 8 Bilhões*
+O Brasil está a frente de 30 países com mais casos de dengue reportados 1,5 milhão de casos. Globalmente é estimado que o custo com a Dengue é de US$ 8 Bilhões* Criação de API para apoio a novos estudos em área de estudos de casos epidemiológicos
 
 ### O Projeto
 
-Consiste na contrução de uma API que auxilia o acesso as informações a saúde,  resolve a deficiencia do sistema DATASUS por meio de uma plataforma onde as unidades Basicas de Saúde conseguem realizar o cadastro dos pacientes com dengue para ajudar a fomentar a pesquisa com mais dados, auxiliando a analise dessas informações no combate e possiveis solucoes de intervenção pública e privada na dengue.
+Consiste na contrução de uma API que auxilia o acesso as informações a saúde, apoia novos estudos em área de estudos de casos epidemiológicos, resolve a deficiencia do sistema DATASUS por meio de uma plataforma onde as unidades Basicas de Saúde conseguem realizar o cadastro dos pacientes com dengue para ajudar a fomentar a pesquisa com mais dados, auxiliando a analise dessas informações no combate e possiveis solucoes de intervenção pública e privada na dengue.
  </br>
  
 ### Rotas 
